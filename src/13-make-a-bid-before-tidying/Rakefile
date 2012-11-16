@@ -10,12 +10,13 @@ task :default => [:microtest]
 
 desc "Run Cucumber (business-facing) tests. Runs microtests first"
 task :cucumber => [:microtest] do
-  system("cucumber --no-color")
+  system("export RUBYLIB=.;cucumber --color")
 end
 
 desc "Run microtests (aka unit tests)."
 task :microtest => [:test]
 
-Rake::TestTask.new do | t | 
+Rake::TestTask.new do | t |
+  ENV['RUBYLIB'] = '.'
   t.test_files = FileList['microtests/**/*tests.rb']
 end

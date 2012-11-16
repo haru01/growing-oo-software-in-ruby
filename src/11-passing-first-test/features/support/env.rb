@@ -1,5 +1,4 @@
 require 'pp'
-require 'spec/expectations'
 require 'logger'
 require 'app/main'
 require 'external/blocking-queue'

@@ -8,5 +8,5 @@ require 'rake/testtask'
 task :default => [:cucumber]
 
 task :cucumber do
-  system("cucumber --no-color")
+  system("export RUBYLIB=.;cucumber --color")
 end
